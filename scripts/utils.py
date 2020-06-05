@@ -6,7 +6,7 @@ wb = load_workbook(filePath)
 salesOrderSheet = wb["SalesOrders"]
 
 
-def getRow(workbook, collumRange="abcd", rowRange=(1, 1)):
+def getCollumRow(workbook, collumRange="abcd", rowRange=(1, 1)):
     rowKey = list()
     for digit in range(rowRange[0], rowRange[1]+1):
         for letter in collumRange:
@@ -43,6 +43,6 @@ def compareKeys(key1, key2):
         print(keyDiff)
 
 
-key1 = getRow(salesOrderSheet, "fffF", rowRange=(1, 1))
-key2 = getRow(salesOrderSheet, "fbcaf", rowRange=(1, 1))
+key1 = getCollumRow(salesOrderSheet, "fffF", rowRange=(1, 1))
+key2 = getCollumRow(salesOrderSheet, "fbcaf", rowRange=(1, 1))
 compareKeys(key1, key2)
